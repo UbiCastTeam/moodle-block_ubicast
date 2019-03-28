@@ -12,22 +12,21 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Strings for component 'block_channel', language 'en'
  *
  * @package    block_channel
  * @copyright  Parthajeet Chakraborty (parthajeet@dualcube.com)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['channel:addinstance'] = 'Add a new Videos block';
+$string['channel:addinstance'] = 'Add a new videos block';
 $string['pluginname'] = 'Videos';
 $string['configtitle'] = 'Videos block title';
 $string['launchurl'] = 'Launch URL';
 $string['key'] = 'Key';
 $string['secret'] = 'Secret';
-$string['configure_error'] = 'Videos Block configuration error!';
+$string['configure_error'] = 'Videos block configuration error!';
 $string['height'] = 'iFrame height';
-

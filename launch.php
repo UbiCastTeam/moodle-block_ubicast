@@ -12,17 +12,16 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Launch iframe
  *
  * @package    block_channel
  * @copyright  Parthajeet Chakraborty (parthajeet@dualcube.com)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
- 
- 
+
 extract($_GET);
 $mt = microtime();
 $rand = mt_rand();
@@ -50,16 +49,15 @@ $base_string = "POST&" . urlencode($launch_url) . "&" . rawurlencode(implode("&"
 $secret = urlencode($secret) . "&";
 $signature = base64_encode(hash_hmac("sha1", $base_string, $secret, true));
 
-	
 ?>
 
 <form id="ltiLaunchForm" name="ltiLaunchForm" method="POST" action="<?php printf($launch_url); ?>">
 <?php foreach ($launch_data as $k => $v ) { ?>
-	<input type="hidden" name="<?php echo $k ?>" value="<?php echo $v ?>">
+    <input type="hidden" name="<?php echo $k ?>" value="<?php echo $v ?>">
 <?php } ?>
-	<input type="hidden" name="oauth_signature" value="<?php echo $signature ?>">
+    <input type="hidden" name="oauth_signature" value="<?php echo $signature ?>">
 </form>
 
 <script type="text/javascript">
-	document.getElementById('ltiLaunchForm').submit(); 
+    document.getElementById('ltiLaunchForm').submit();
 </script>

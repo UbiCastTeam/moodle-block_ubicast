@@ -12,18 +12,25 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Version details
  *
  * @package    block_channel
  * @copyright  Parthajeet Chakraborty (parthajeet@dualcube.com)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2019032501;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2014112800;        // Requires this Moodle version
-$plugin->component = 'block_channel'; // Full name of the plugin (used for diagnostics)
+$plugin->version = 2019032800;
+$plugin->requires = 2015111610; // 3.0
+$plugin->component = 'block_channel';
+$plugin->release = '1.0';
+$plugin->maturity = MATURITY_STABLE;
+$plugin->cron = 0;
+
+$plugin->dependencies = [
+    'mod_easycastms' => 2019032800,
+];
