@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'block_channel', language 'en'
+ * Strings for component 'block_easycastms', language 'en'
  *
- * @package    block_channel
- * @copyright  Parthajeet Chakraborty (parthajeet@dualcube.com)
+ * @package    block_easycastms
+ * @copyright  Stéphane Diemer
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['channel:addinstance'] = 'Add a new videos block';
 $string['pluginname'] = 'Videos';
 $string['configtitle'] = 'Videos block title';
-$string['launchurl'] = 'Launch URL';
+$string['resourceid'] = 'Resource ID';
 $string['key'] = 'Key';
 $string['secret'] = 'Secret';
 $string['configure_error'] = 'Videos block configuration error!';

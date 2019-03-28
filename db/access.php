@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Channel block caps.
+ * block_easycastms database settings.
  *
- * @package    block_channel
- * @copyright  Parthajeet Chakraborty (parthajeet@dualcube.com)
+ * @package    block_easycastms
+ * @copyright  Stéphane Diemer
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
 
-    'block/channel:addinstance' => array(
+    'block/easycastms:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
 
         'captype' => 'write',

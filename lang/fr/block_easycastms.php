@@ -15,22 +15,18 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Version details
+ * Strings for component 'block_easycastms', language 'fr'
  *
  * @package    block_easycastms
  * @copyright  Stéphane Diemer
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-$plugin->version = 2019032800;
-$plugin->requires = 2015111610; // 3.0
-$plugin->component = 'block_easycastms';
-$plugin->release = '1.0';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->cron = 0;
-
-$plugin->dependencies = [
-    'mod_easycastms' => 2019032800,
-];
+$string['channel:addinstance'] = 'Add a new videos block';
+$string['pluginname'] = 'Videos';
+$string['configtitle'] = 'Videos block title';
+$string['resourceid'] = 'Resource ID';
+$string['key'] = 'Key';
+$string['secret'] = 'Secret';
+$string['configure_error'] = 'Videos block configuration error!';
+$string['height'] = 'iFrame height';
