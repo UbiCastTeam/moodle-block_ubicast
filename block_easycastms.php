@@ -69,7 +69,7 @@ class block_easycastms extends block_base {
                 $this->content->footer = '';
             } else {
                 if (has_capability('moodle/site:manageblocks', $systemcontext)) {
-                    $this->content->text = get_string('configure_error', 'block_easycastms');
+                    $this->content->text = get_string('unconfigured_message', 'block_easycastms');
                     $this->content->footer = '';
                 }
             }

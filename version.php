@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2019032800;
+$plugin->version = 2019032801;
 $plugin->requires = 2015111610; // 3.0
 $plugin->component = 'block_easycastms';
 $plugin->release = '1.0';

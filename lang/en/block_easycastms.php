@@ -23,10 +23,9 @@
  */
 
 $string['channel:addinstance'] = 'Add a new videos block';
-$string['pluginname'] = 'Videos';
-$string['configtitle'] = 'Videos block title';
-$string['resourceid'] = 'Resource ID';
-$string['key'] = 'Key';
-$string['secret'] = 'Secret';
-$string['configure_error'] = 'Videos block configuration error!';
-$string['height'] = 'iFrame height';
+$string['pluginname'] = 'Videos list';
+$string['block_title'] = 'Block title';
+$string['block_height'] = 'Block height (px)';
+$string['resource_id'] = 'MediaServer channel ID';
+$string['resource_id_help'] = 'Enter the MediaServer channel ID. Example: "c124cbdfb0e5c9e28a30".';
+$string['unconfigured_message'] = 'No resource ID set.';

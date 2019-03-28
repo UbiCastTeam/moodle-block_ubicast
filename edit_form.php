@@ -27,15 +27,16 @@ class block_easycastms_edit_form extends block_edit_form {
         // Fields for editing HTML block title and contents.
         $mform->addElement('header', 'configheader', get_string('blocksettings', 'block'));
         
-        $mform->addElement('text', 'config_title', get_string('configtitle', 'block_easycastms'));
+        $mform->addElement('text', 'config_title', get_string('block_title', 'block_easycastms'));
         $mform->setDefault('config_title', get_string('pluginname', 'block_easycastms'));
         $mform->setType('config_title', PARAM_TEXT);
 
-        $mform->addElement('text', 'config_resourceid', get_string('resourceid', 'block_easycastms'));
-        $mform->setType('config_resourceid', PARAM_ALPHANUMEXT);
-
-        $mform->addElement('text', 'config_height', get_string('height', 'block_easycastms'));
+        $mform->addElement('text', 'config_height', get_string('block_height', 'block_easycastms'));
         $mform->setDefault('config_height', 400);
         $mform->setType('config_height', PARAM_INT);
+
+        $mform->addElement('text', 'config_resourceid', get_string('resource_id', 'block_easycastms'));
+        $mform->addHelpButton('config_resourceid', 'resource_id', 'block_easycastms');
+        $mform->setType('config_resourceid', PARAM_ALPHANUMEXT);
     }
 }

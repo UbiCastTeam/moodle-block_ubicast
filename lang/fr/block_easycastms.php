@@ -22,11 +22,10 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['channel:addinstance'] = 'Add a new videos block';
-$string['pluginname'] = 'Videos';
-$string['configtitle'] = 'Videos block title';
-$string['resourceid'] = 'Resource ID';
-$string['key'] = 'Key';
-$string['secret'] = 'Secret';
-$string['configure_error'] = 'Videos block configuration error!';
-$string['height'] = 'iFrame height';
+$string['channel:addinstance'] = 'Ajouter un nouveau bloc vidéos';
+$string['pluginname'] = 'Liste de vidéos';
+$string['block_title'] = 'Titre du bloc';
+$string['block_height'] = 'Hauteur du bloc (px)';
+$string['resource_id'] = 'Identifiant de la chaîne de MediaServer';
+$string['resource_id_help'] = 'Entrez un identifiant de chaîne. Par exemple: "c124cbdfb0e5c9e28a30".';
+$string['unconfigured_message'] = 'Aucun identifiant de ressource n\'a été défini.';
