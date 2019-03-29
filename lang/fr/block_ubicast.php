@@ -23,7 +23,7 @@
  */
 
 $string['channel:addinstance'] = 'Ajouter un nouveau bloc vidéos';
-$string['pluginname'] = 'Liste de vidéos';
+$string['pluginname'] = 'Bloc vidéos de MediaServer';
 $string['block_title'] = 'Titre du bloc';
 $string['block_height'] = 'Hauteur du bloc (px)';
 $string['resource_id'] = 'Identifiant de la chaîne de MediaServer';
