@@ -17,7 +17,7 @@
 /**
  * Version details
  *
- * @package    block_easycastms
+ * @package    block_ubicast
  * @copyright  Stéphane Diemer
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,11 +26,11 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->version = 2019032801;
 $plugin->requires = 2015111610; // 3.0
-$plugin->component = 'block_easycastms';
+$plugin->component = 'block_ubicast';
 $plugin->release = '1.0';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->cron = 0;
 
 $plugin->dependencies = [
-    'mod_easycastms' => 2019032800,
+    'mod_ubicast' => 2019032800,
 ];

@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * block_easycastms database settings.
+ * block_ubicast database settings.
  *
- * @package    block_easycastms
+ * @package    block_ubicast
  * @copyright  Stéphane Diemer
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
 
-    'block/easycastms:addinstance' => array(
+    'block/ubicast:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
 
         'captype' => 'write',

@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
  
  /**
- * block_easycastms display.
+ * block_ubicast display.
  *
- * @package    block_easycastms
+ * @package    block_ubicast
  * @copyright  Stéphane Diemer
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,9 +25,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 
-class block_easycastms extends block_base {
+class block_ubicast extends block_base {
     function init() {
-        $this->title = get_string('pluginname', 'block_easycastms');
+        $this->title = get_string('pluginname', 'block_ubicast');
     }
 
     function instance_allow_multiple() {
@@ -48,7 +48,7 @@ class block_easycastms extends block_base {
 
     function specialization() {
         if (empty($this->config->title)) {
-            $this->title = get_string('pluginname', 'block_easycastms');
+            $this->title = get_string('pluginname', 'block_ubicast');
         } else {
             $this->title = $this->config->title;
         }
@@ -63,13 +63,13 @@ class block_easycastms extends block_base {
             $item_oid = $this->config->resourceid;
 
             if ($item_oid) {
-                $url = $CFG->wwwroot.'/blocks/easycastms/lti.php?id='.$COURSE->id.'&oid='.$item_oid;
+                $url = $CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$item_oid;
                 $this->content = new stdClass();
                 $this->content->text = '<iframe id="contentframe" height="'.$this->config->height.'px" width="100%" src="'.$url.'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
                 $this->content->footer = '';
             } else {
                 if (has_capability('moodle/site:manageblocks', $systemcontext)) {
-                    $this->content->text = get_string('unconfigured_message', 'block_easycastms');
+                    $this->content->text = get_string('unconfigured_message', 'block_ubicast');
                     $this->content->footer = '';
                 }
             }

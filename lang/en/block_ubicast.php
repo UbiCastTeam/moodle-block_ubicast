@@ -15,17 +15,17 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Strings for component 'block_easycastms', language 'fr'
+ * Strings for component 'block_ubicast', language 'en'
  *
- * @package    block_easycastms
+ * @package    block_ubicast
  * @copyright  Stéphane Diemer
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['channel:addinstance'] = 'Ajouter un nouveau bloc vidéos';
-$string['pluginname'] = 'Liste de vidéos';
-$string['block_title'] = 'Titre du bloc';
-$string['block_height'] = 'Hauteur du bloc (px)';
-$string['resource_id'] = 'Identifiant de la chaîne de MediaServer';
-$string['resource_id_help'] = 'Entrez un identifiant de chaîne. Par exemple: "c124cbdfb0e5c9e28a30".';
-$string['unconfigured_message'] = 'Aucun identifiant de ressource n\'a été défini.';
+$string['channel:addinstance'] = 'Add a new videos block';
+$string['pluginname'] = 'Videos list';
+$string['block_title'] = 'Block title';
+$string['block_height'] = 'Block height (px)';
+$string['resource_id'] = 'MediaServer channel ID';
+$string['resource_id_help'] = 'Enter the MediaServer channel ID. Example: "c124cbdfb0e5c9e28a30".';
+$string['unconfigured_message'] = 'No resource ID set.';
