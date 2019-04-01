@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2019032900;
+$plugin->version = 2019040100;
 $plugin->requires = 2015111610; // 3.0
 $plugin->component = 'block_ubicast';
 $plugin->release = '1.0';
