@@ -60,4 +60,4 @@ $context = context_course::instance($cid);
 require_login($course, true);
 require_capability('mod/ubicast:view', $context);
 
-ubicast_launch_tool($course, null, $oid.'/');
+ubicast_launch_tool($course, null, $oid.'/?newtab');
