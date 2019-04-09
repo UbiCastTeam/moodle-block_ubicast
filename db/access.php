@@ -12,20 +12,19 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * block_ubicast database settings.
  *
  * @package    block_ubicast
- * @copyright  Stéphane Diemer
+ * @copyright  2019 UbiCast {@link https://www.ubicast.eu}
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $capabilities = array(
-
     'block/ubicast:addinstance' => array(
         'riskbitmask' => RISK_SPAM | RISK_XSS,
 

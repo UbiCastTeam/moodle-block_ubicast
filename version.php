@@ -24,10 +24,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2019040900;
+$plugin->version = 2019040901;
 $plugin->requires = 2015111610;  // 3.0.
 $plugin->component = 'block_ubicast';
-$plugin->release = '1.0 (Build: 2019040900)';
+$plugin->release = '1.0 (Build: 2019040901)';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->cron = 0;
 

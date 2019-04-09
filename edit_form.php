@@ -22,11 +22,13 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die();
+
 class block_ubicast_edit_form extends block_edit_form {
     protected function specific_definition($mform) {
         // Fields for editing HTML block title and contents.
         $mform->addElement('header', 'configheader', get_string('blocksettings', 'block'));
-        
+
         $mform->addElement('text', 'config_title', get_string('block_title', 'block_ubicast'));
         $mform->setDefault('config_title', get_string('pluginname', 'block_ubicast'));
         $mform->setType('config_title', PARAM_TEXT);
