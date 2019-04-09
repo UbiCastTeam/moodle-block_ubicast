@@ -12,13 +12,13 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
- 
- /**
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
  * block_ubicast display.
  *
  * @package    block_ubicast
- * @copyright  Stéphane Diemer
+ * @copyright  2019 UbiCast {@link https://www.ubicast.eu}
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,27 +26,27 @@ defined('MOODLE_INTERNAL') || die();
 
 
 class block_ubicast extends block_base {
-    function init() {
+    public function init() {
         $this->title = get_string('pluginname', 'block_ubicast');
     }
 
-    function instance_allow_multiple() {
+    public function instance_allow_multiple() {
         return true;
     }
 
-    function has_config() {
+    public function has_config() {
         return false;
     }
 
-    function applicable_formats() {
+    public function applicable_formats() {
         return array('all' => true, 'my' => false);
     }
 
-    function instance_allow_config() {
+    public function instance_allow_config() {
         return true;
     }
 
-    function specialization() {
+    public function specialization() {
         if (empty($this->config->title)) {
             $this->title = get_string('pluginname', 'block_ubicast');
         } else {
@@ -54,18 +54,19 @@ class block_ubicast extends block_base {
         }
     }
 
-    function get_content() {
+    public function get_content() {
         global $CFG, $SITE, $USER, $DB, $COURSE;
 
         if (isloggedin()) {
             $systemcontext = context_system::instance();
 
-            $item_oid = $this->config->resourceid;
+            $itemoid = $this->config->resourceid;
 
-            if ($item_oid) {
-                $url = $CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$item_oid;
+            if ($itemoid) {
+                $url = $CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$itemoid;
                 $this->content = new stdClass();
-                $this->content->text = '<iframe id="contentframe" height="'.$this->config->height.'px" width="100%" src="'.$url.'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                $this->content->text = '<iframe id="contentframe" height="'.$this->config->height.'px" width="100%" src="'.$url.'"';
+                $this->content->text += ' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
                 $this->content->footer = '';
             } else {
                 if (has_capability('moodle/site:manageblocks', $systemcontext)) {

@@ -12,25 +12,25 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * Version details
  *
  * @package    block_ubicast
- * @copyright  Stéphane Diemer
+ * @copyright  2019 UbiCast {@link https://www.ubicast.eu}
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2019040300;
-$plugin->requires = 2015111610; // 3.0
+$plugin->version = 2019040900;
+$plugin->requires = 2015111610;  // 3.0.
 $plugin->component = 'block_ubicast';
-$plugin->release = '1.0';
+$plugin->release = '1.0 (Build: 2019040900)';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->cron = 0;
 
 $plugin->dependencies = [
-    'mod_ubicast' => 2019040200,
+    'mod_ubicast' => 2019040900,
 ];
