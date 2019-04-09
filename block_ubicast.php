@@ -15,16 +15,12 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * block_ubicast display.
+ * Handles displaying the ubicast block.
  *
  * @package    block_ubicast
  * @copyright  2019 UbiCast {@link https://www.ubicast.eu}
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
-defined('MOODLE_INTERNAL') || die();
-
-
 class block_ubicast extends block_base {
     public function init() {
         $this->title = get_string('pluginname', 'block_ubicast');
