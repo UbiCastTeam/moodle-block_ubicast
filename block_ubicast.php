@@ -61,8 +61,7 @@ class block_ubicast extends block_base {
             if ($itemoid) {
                 $url = $CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$itemoid;
                 $this->content = new stdClass();
-                $this->content->text = '<iframe id="contentframe" height="'.$this->config->height.'px" width="100%" src="'.$url.'"';
-                $this->content->text += ' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+                $this->content->text = '<iframe id="contentframe" height="'.$this->config->height.'px" width="100%" src="'.$url.'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
                 $this->content->footer = '';
             } else {
                 if (has_capability('moodle/site:manageblocks', $systemcontext)) {
