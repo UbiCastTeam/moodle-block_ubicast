@@ -29,3 +29,4 @@ $string['block_height'] = 'Block height (px)';
 $string['resource_id'] = 'MediaServer channel ID';
 $string['resource_id_help'] = 'Enter the MediaServer channel ID. Example: "c124cbdfb0e5c9e28a30".';
 $string['unconfigured_message'] = 'No resource ID set.';
+$string['privacy:metadata'] = 'The block_ubicast plugin does not store any personal data.';

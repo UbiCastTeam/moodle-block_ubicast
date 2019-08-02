@@ -29,3 +29,4 @@ $string['block_height'] = 'Hauteur du bloc (px)';
 $string['resource_id'] = 'Identifiant de la chaîne de MediaServer';
 $string['resource_id_help'] = 'Entrez un identifiant de chaîne. Par exemple: "c124cbdfb0e5c9e28a30".';
 $string['unconfigured_message'] = 'Aucun identifiant de ressource n\'a été défini.';
+$string['privacy:metadata'] = 'Le plugin block_ubicast ne stocke aucune information personnelle.';

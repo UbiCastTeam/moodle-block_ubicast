@@ -15,22 +15,26 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details
+ * Privacy policy
  *
  * @package    block_ubicast
  * @copyright  2019 UbiCast {@link https://www.ubicast.eu}
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+namespace block_ubicast\privacy;
 
-$plugin->version = 2019080200;
-$plugin->requires = 2015111610;  // 3.0.
-$plugin->component = 'block_ubicast';
-$plugin->release = '1.1 (Build: 2019080200)';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->cron = 0;
+class provider implements
+    // This plugin does not store any personal user data.
+    \core_privacy\local\metadata\null_provider {
 
-$plugin->dependencies = [
-    'mod_ubicast' => 2019040900,
-];
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:metadata';
+    }
+}
