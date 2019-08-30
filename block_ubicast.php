@@ -53,23 +53,26 @@ class block_ubicast extends block_base {
     public function get_content() {
         global $CFG, $SITE, $USER, $DB, $COURSE;
 
-        if (isloggedin()) {
-            $systemcontext = context_system::instance();
-
-            $itemoid = $this->config->resourceid;
-
-            if ($itemoid) {
-                $url = $CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$itemoid;
-                $this->content = new stdClass();
-                $this->content->text = '<iframe id="contentframe" height="'.$this->config->height.'px" width="100%" src="'.$url.'" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-                $this->content->footer = '';
-            } else {
-                if (has_capability('moodle/site:manageblocks', $systemcontext)) {
-                    $this->content->text = get_string('unconfigured_message', 'block_ubicast');
-                    $this->content->footer = '';
-                }
-            }
+        if ($this->content !== NULL) {
             return $this->content;
         }
+
+        // Initalise block content object.
+        $this->content = new stdClass;
+        $this->content->text   = '';
+        $this->content->footer = '';
+
+        if (!isset($this->config)) {
+            // The block has yet to be configured, just display configure message in it.
+            $this->content->text = get_string('unconfigured_message', 'block_ubicast');
+            return $this->content;
+        }
+
+        if (isloggedin() && !empty($this->config->resourceid)) {
+            $url = $CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$this->config->resourceid;
+            $allow = 'webkitallowfullscreen mozallowfullscreen allowfullscreen';
+            $this->content->text = '<iframe id="contentframe" height="'.$this->config->height.'px" width="100%" src="'.$url.'" '.$allow.'></iframe>';
+        }
+        return $this->content;
     }
 }
