@@ -53,7 +53,7 @@ class block_ubicast extends block_base {
     public function get_content() {
         global $CFG, $SITE, $USER, $DB, $COURSE;
 
-        if ($this->content !== NULL) {
+        if ($this->content !== null) {
             return $this->content;
         }
 
@@ -69,9 +69,10 @@ class block_ubicast extends block_base {
         }
 
         if (isloggedin() && !empty($this->config->resourceid)) {
-            $url = $CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$this->config->resourceid;
+            $src = 'src="'.$CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$this->config->resourceid.'"';
+            $style = 'height="'.$this->config->height.'px" width="100%"';
             $allow = 'webkitallowfullscreen mozallowfullscreen allowfullscreen';
-            $this->content->text = '<iframe id="contentframe" height="'.$this->config->height.'px" width="100%" src="'.$url.'" '.$allow.'></iframe>';
+            $this->content->text = '<iframe id="contentframe" '.$style.' '.$src.' '.$allow.'></iframe>';
         }
         return $this->content;
     }
