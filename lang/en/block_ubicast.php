@@ -22,7 +22,7 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['channel:addinstance'] = 'Add a new videos block';
+$string['ubicast:addinstance'] = 'Add a new videos block';
 $string['pluginname'] = 'MediaServer videos';
 $string['block_title'] = 'Block title';
 $string['block_height'] = 'Block height (px)';
