@@ -24,10 +24,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2022021800;
+$plugin->version = 2022092000;
 $plugin->requires = 2019052000;  // Moodle 3.7.
 $plugin->component = 'block_ubicast';
-$plugin->release = '1.4';
+$plugin->release = '1.5';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->cron = 0;
 

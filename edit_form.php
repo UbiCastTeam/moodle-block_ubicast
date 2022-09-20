@@ -37,7 +37,8 @@ class block_ubicast_edit_form extends block_edit_form {
         $mform->setDefault('config_height', 400);
         $mform->setType('config_height', PARAM_INT);
 
-        $mform->addElement('text', 'config_resourceid', get_string('resource_id', 'block_ubicast'));
+        $mform->addElement('text', 'config_resourceid', get_string('resource_id', 'block_ubicast'),
+            ['onchange' => "javascript: this.value = ((new RegExp('(?:^|/)([cvlp][a-z0-9]{19})($:^|/)').exec(this.value)) || [null, this.value])[1]"]);
         $mform->addHelpButton('config_resourceid', 'resource_id', 'block_ubicast');
         $mform->setType('config_resourceid', PARAM_ALPHANUMEXT);
     }
