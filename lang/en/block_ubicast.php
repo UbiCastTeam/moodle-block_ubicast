@@ -33,6 +33,7 @@ $string['block_types_c'] = 'Channels';
 $string['block_types_v'] = 'Videos';
 $string['block_types_l'] = 'Lives';
 $string['block_types_p'] = 'Photos';
+$string['block_orderby'] = 'Order by';
 $string['block_orderby_type_asc'] = '↑ Type';
 $string['block_orderby_type_desc'] = '↓ Type';
 $string['block_orderby_title_asc'] = '↑ Title';

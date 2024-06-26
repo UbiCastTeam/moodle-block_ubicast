@@ -44,7 +44,7 @@ class block_ubicast_edit_form extends block_edit_form {
             'p' => get_string('block_types_p', 'block_ubicast')
         ];
         $select = $mform->addElement('select', 'config_types',
-            get_string('block_types_label', 'block_ubicast'), $choicesTypes);
+            /*get_string('block_types_label', 'block_ubicast')*/ 'Types', $choicesTypes);
         $select->setMultiple(true);
         $mform->setType('config_types', PARAM_TEXT);
         $mform->setDefault('config_types', array('c', 'v', 'l', 'p'));
