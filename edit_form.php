@@ -37,7 +37,7 @@ class block_ubicast_edit_form extends block_edit_form {
         $mform->setDefault('config_height', 400);
         $mform->setType('config_height', PARAM_INT);
 
-        $choicesTypes = [
+        /*$choicesTypes = [
             'c' => get_string('block_types_c', 'block_ubicast'),
             'v' => get_string('block_types_v', 'block_ubicast'),
             'l' => get_string('block_types_l', 'block_ubicast'),
@@ -47,7 +47,7 @@ class block_ubicast_edit_form extends block_edit_form {
             get_string('block_types', 'block_ubicast'), $choicesTypes);
         $select->setMultiple(true);
         $mform->setType('config_types', PARAM_TEXT);
-        //$mform->setDefault('config_types', array('c', 'v', 'l', 'p'));
+        $mform->setDefault('config_types', array('c', 'v', 'l', 'p'));
 
         $choicesOrder = [
             'type' => get_string('block_orderby_type_asc', 'block_ubicast'),
@@ -64,7 +64,7 @@ class block_ubicast_edit_form extends block_edit_form {
         $mform->addElement('select', 'config_orderby',
             get_string('block_orderby', 'block_ubicast'), $choicesOrder);
         $mform->setType('config_orderby', PARAM_TEXT);
-        $mform->setDefault('config_orderby', '-creation_date');
+        $mform->setDefault('config_orderby', '-creation_date');*/
 
         $mform->addElement('text', 'config_resourceid', get_string('resource_id', 'block_ubicast'),
             ['onchange' => "javascript: this.value = ((new RegExp('(?:^|/)([cvlp][a-z0-9]{19})($:^|/)').exec(this.value)) || [null, this.value])[1]"]);
