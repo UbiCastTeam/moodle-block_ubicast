@@ -36,7 +36,7 @@ if ($orderBy) {
     $queryString = '&orderBy='.$orderBy;
 }
 if ($filters) {
-    $queryString = $queryString.'&filters='.$filters;
+    $queryString = $queryString.'&filters='.urlencode($filters);
 }
 
 $course = $DB->get_record('course', array('id' => $cid), '*', MUST_EXIST);
