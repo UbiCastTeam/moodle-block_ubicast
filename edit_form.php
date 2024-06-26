@@ -37,6 +37,33 @@ class block_ubicast_edit_form extends block_edit_form {
         $mform->setDefault('config_height', 400);
         $mform->setType('config_height', PARAM_INT);
 
+        $choicesTypes = [
+            'c' => get_string('block_types_c', 'block_ubicast'),
+            'v' => get_string('block_types_v', 'block_ubicast'),
+            'l' => get_string('block_types_l', 'block_ubicast'),
+            'p' => get_string('block_types_p', 'block_ubicast')
+        ];
+        $select = $mform->addElement('select', 'config_types',
+            get_string('block_types', 'block_ubicast'), $choicesTypes);
+        $select->setMultiple(true);
+        $mform->setDefault('config_types', array('c', 'v', 'l', 'p'));
+
+        $choicesOrder = [
+            'type' => get_string('block_orderby_type_asc', 'block_ubicast'),
+            '-type' => get_string('block_orderby_type_desc', 'block_ubicast'),
+            'title' => get_string('block_orderby_title_asc', 'block_ubicast'),
+            '-title' => get_string('block_orderby_title_desc', 'block_ubicast'),
+            'add_date' => get_string('block_orderby_add_asc', 'block_ubicast'),
+            '-add_date' => get_string('block_orderby_add_desc', 'block_ubicast'),
+            'creation_date' => get_string('block_orderby_creation_asc', 'block_ubicast'),
+            '-creation_date' => get_string('block_orderby_creation_desc', 'block_ubicast'),
+            'views' => get_string('block_orderby_views_asc', 'block_ubicast'),
+            '-views' => get_string('block_orderby_views_desc', 'block_ubicast')
+        ];
+        $mform->addElement('select', 'config_orderby',
+            get_string('block_orderby', 'block_ubicast'), $choicesOrder);
+        $mform->setDefault('config_types', '-creation_date');
+
         $mform->addElement('text', 'config_resourceid', get_string('resource_id', 'block_ubicast'),
             ['onchange' => "javascript: this.value = ((new RegExp('(?:^|/)([cvlp][a-z0-9]{19})($:^|/)').exec(this.value)) || [null, this.value])[1]"]);
         $mform->addHelpButton('config_resourceid', 'resource_id', 'block_ubicast');
