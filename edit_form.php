@@ -46,6 +46,7 @@ class block_ubicast_edit_form extends block_edit_form {
         $select = $mform->addElement('select', 'config_types',
             get_string('block_types', 'block_ubicast'), $choicesTypes);
         $select->setMultiple(true);
+        $mform->setType('config_types', PARAM_TEXT);
         $mform->setDefault('config_types', array('c', 'v', 'l', 'p'));
 
         $choicesOrder = [
@@ -62,7 +63,8 @@ class block_ubicast_edit_form extends block_edit_form {
         ];
         $mform->addElement('select', 'config_orderby',
             get_string('block_orderby', 'block_ubicast'), $choicesOrder);
-        $mform->setDefault('config_types', '-creation_date');
+        $mform->setType('config_orderby', PARAM_TEXT);
+        $mform->setDefault('config_orderby', '-creation_date');
 
         $mform->addElement('text', 'config_resourceid', get_string('resource_id', 'block_ubicast'),
             ['onchange' => "javascript: this.value = ((new RegExp('(?:^|/)([cvlp][a-z0-9]{19})($:^|/)').exec(this.value)) || [null, this.value])[1]"]);
