@@ -33,10 +33,10 @@ $filter = required_param('filter', PARAM_TEXT);
 
 $queryString = '';
 if ($orderBy) {
-    $queryString = '&orderBy='.$orderBy
+    $queryString = '&orderBy='.$orderBy;
 }
 if ($filter) {
-    $queryString = $queryString.'&filter='.$filter
+    $queryString = $queryString.'&filter='.$filter;
 }
 
 $course = $DB->get_record('course', array('id' => $cid), '*', MUST_EXIST);
