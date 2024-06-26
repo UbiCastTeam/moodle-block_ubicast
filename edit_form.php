@@ -37,17 +37,17 @@ class block_ubicast_edit_form extends block_edit_form {
         $mform->setDefault('config_height', 400);
         $mform->setType('config_height', PARAM_INT);
 
-        /*$choicesTypes = [
+        $choicesTypes = [
             'c' => get_string('block_types_c', 'block_ubicast'),
             'v' => get_string('block_types_v', 'block_ubicast'),
             'l' => get_string('block_types_l', 'block_ubicast'),
             'p' => get_string('block_types_p', 'block_ubicast')
         ];
         $select = $mform->addElement('select', 'config_types',
-            get_string('block_types', 'block_ubicast'), $choicesTypes);
+            get_string('block_types_label', 'block_ubicast'), $choicesTypes);
         $select->setMultiple(true);
         $mform->setType('config_types', PARAM_TEXT);
-        $mform->setDefault('config_types', array('c', 'v', 'l', 'p'));*/
+        $mform->setDefault('config_types', array('c', 'v', 'l', 'p'));
 
         $choicesOrder = [
             'type' => get_string('block_orderby_type_asc', 'block_ubicast'),

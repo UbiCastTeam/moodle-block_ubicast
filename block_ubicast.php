@@ -74,7 +74,7 @@ class block_ubicast extends block_base {
                 $filters = [
                     'itemType' => $this->config->types
                 ];
-                $src = $src.'&filters='.json_encode($filters);
+                $src = $src.'&filters='.urlencode(json_encode($filters));
             }
             if ($this->config->orderby) {
                 $src = $src.'&orderBy='.$this->config->orderby;
