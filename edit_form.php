@@ -47,7 +47,7 @@ class block_ubicast_edit_form extends block_edit_form {
             get_string('block_types', 'block_ubicast'), $choicesTypes);
         $select->setMultiple(true);
         $mform->setType('config_types', PARAM_TEXT);
-        $mform->setDefault('config_types', array('c', 'v', 'l', 'p'));
+        //$mform->setDefault('config_types', array('c', 'v', 'l', 'p'));
 
         $choicesOrder = [
             'type' => get_string('block_orderby_type_asc', 'block_ubicast'),
