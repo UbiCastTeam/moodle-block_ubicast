@@ -77,7 +77,7 @@ class block_ubicast extends block_base {
                 $src = $src.'&filters='.json_encode($filters);
             }
             if ($this->config->orderBy) {
-                $src = $src.'&orderBy='.$this->config->orderBy
+                $src = $src.'&orderBy='.$this->config->orderBy;
             }
             $src = $src.'"';
             $style = 'height="'.$this->config->height.'px" width="100%"';
