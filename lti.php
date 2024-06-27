@@ -28,8 +28,8 @@ require_once($CFG->dirroot.'/mod/ubicast/locallib.php');
 
 $cid = required_param('id', PARAM_INT);  // Course ID.
 $oid = required_param('oid', PARAM_ALPHANUMEXT);  // Media or channel object ID.
-$orderBy = optional_param('orderBy', PARAM_TEXT);
-$filters = optional_param('filters', PARAM_TEXT);
+$orderBy = optional_param('orderBy', NULL, PARAM_TEXT);
+$filters = optional_param('filters', NULL, PARAM_TEXT);
 
 $queryString = '';
 if ($orderBy) {
