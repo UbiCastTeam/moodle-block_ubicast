@@ -48,7 +48,7 @@ class block_ubicast_edit_form extends block_edit_form {
             'c' => get_string('block_types_c', 'block_ubicast'),
             'v' => get_string('block_types_v', 'block_ubicast'),
             'l' => get_string('block_types_l', 'block_ubicast'),
-            'p' => get_string('block_types_p', 'block_ubicast')
+            'p' => get_string('block_types_p', 'block_ubicast'),
         ];
         $select = $mform->addElement('select', 'config_types',
             get_string('block_types_label', 'block_ubicast'), $types);
@@ -66,7 +66,7 @@ class block_ubicast_edit_form extends block_edit_form {
             'creation_date' => get_string('block_orderby_creation_asc', 'block_ubicast'),
             '-creation_date' => get_string('block_orderby_creation_desc', 'block_ubicast'),
             'views' => get_string('block_orderby_views_asc', 'block_ubicast'),
-            '-views' => get_string('block_orderby_views_desc', 'block_ubicast')
+            '-views' => get_string('block_orderby_views_desc', 'block_ubicast'),
         ];
         $mform->addElement('select', 'config_orderby',
             get_string('block_orderby', 'block_ubicast'), $orders);
