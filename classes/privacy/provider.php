@@ -24,9 +24,12 @@
 
 namespace block_ubicast\privacy;
 
-class provider implements
-    // This plugin does not store any personal user data.
-    \core_privacy\local\metadata\null_provider {
+defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Privacy Subsystem implementing null_provider.
+ */
+class provider implements \core_privacy\local\metadata\null_provider {
 
     /**
      * Get the language string identifier with the component's language
@@ -34,7 +37,7 @@ class provider implements
      *
      * @return  string
      */
-    public static function get_reason() : string {
+    public static function get_reason(): string {
         return 'privacy:metadata';
     }
 }

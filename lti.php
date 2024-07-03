@@ -23,17 +23,27 @@
  */
 
 require_once('../../config.php');
-require_once($CFG->dirroot.'/mod/ubicast/lib.php');
-require_once($CFG->dirroot.'/mod/ubicast/locallib.php');
+require_once($CFG->dirroot . '/mod/ubicast/lib.php');
+require_once($CFG->dirroot . '/mod/ubicast/locallib.php');
 
 $cid = required_param('id', PARAM_INT);  // Course ID.
 $oid = required_param('oid', PARAM_ALPHANUMEXT);  // Media or channel object ID.
+$orderby = optional_param('orderBy', null, PARAM_TEXT);
+$filters = optional_param('filters', null, PARAM_TEXT);
 
-$course = $DB->get_record('course', array('id' => $cid), '*', MUST_EXIST);
+$querystring = '';
+if ($orderby) {
+    $querystring .= '&orderBy=' . $orderby;
+}
+if ($filters) {
+    $querystring .= '&filters=' . urlencode($filters);
+}
+
+$course = $DB->get_record('course', ['id' => $cid], '*', MUST_EXIST);
 
 $context = context_course::instance($cid);
 
 require_login($course, true);
 require_capability('mod/ubicast:view', $context);
 
-ubicast_launch_tool($course, null, $oid.'/?newtab');
+ubicast_launch_tool($course, null, $oid . '/?newtab' . $querystring);
