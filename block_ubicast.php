@@ -22,26 +22,44 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class block_ubicast extends block_base {
+
+    /**
+     * Init.
+     */
     public function init() {
         $this->title = get_string('pluginname', 'block_ubicast');
     }
 
+    /**
+     * Indicate if several instance can be created for one course.
+     *
+     * @return bool
+     */
     public function instance_allow_multiple() {
         return true;
     }
 
-    public function has_config() {
-        return false;
-    }
-
-    public function applicable_formats() {
-        return array('all' => true, 'my' => false);
-    }
-
+    /**
+     * Indicate if the instance can be configured.
+     *
+     * @return bool
+     */
     public function instance_allow_config() {
         return true;
     }
 
+    /**
+     * Locations where block can be displayed.
+     *
+     * @return array
+     */
+    public function applicable_formats() {
+        return ['all' => true, 'my' => false];
+    }
+
+    /**
+     * Override some vars with settings.
+     */
     public function specialization() {
         if (empty($this->config->title)) {
             $this->title = get_string('pluginname', 'block_ubicast');
@@ -50,6 +68,11 @@ class block_ubicast extends block_base {
         }
     }
 
+    /**
+     * Returns the block content.
+     *
+     * @return string
+     */
     public function get_content() {
         global $CFG, $SITE, $USER, $DB, $COURSE;
 
@@ -59,7 +82,7 @@ class block_ubicast extends block_base {
 
         // Initalise block content object.
         $this->content = new stdClass;
-        $this->content->text   = '';
+        $this->content->text = '';
         $this->content->footer = '';
 
         if (!isset($this->config)) {
@@ -71,18 +94,16 @@ class block_ubicast extends block_base {
         if (isloggedin() && !empty($this->config->resourceid)) {
             $src = 'src="'.$CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$this->config->resourceid;
             if ($this->config->types) {
-                $filters = [
-                    'itemType' => $this->config->types
-                ];
-                $src = $src.'&filters='.urlencode(json_encode($filters));
+                $filters = ['itemType' => $this->config->types];
+                $src .= '&filters='.urlencode(json_encode($filters));
             }
             if ($this->config->orderby) {
-                $src = $src.'&orderBy='.$this->config->orderby;
+                $src .= '&orderBy='.$this->config->orderby;
             }
-            $src = $src.'"';
+            $src .= '"';
             $style = 'height="'.$this->config->height.'px" width="100%"';
             $allow = 'webkitallowfullscreen mozallowfullscreen allowfullscreen';
-            $this->content->text = '<iframe id="contentframe" '.$style.' '.$src.' '.$allow.'></iframe>';
+            $this->content->text = '<iframe id="contentframe" ' . $style . ' ' . $src . ' ' . $allow . '></iframe>';
         }
         return $this->content;
     }
