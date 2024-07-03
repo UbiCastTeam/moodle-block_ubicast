@@ -27,7 +27,7 @@ namespace block_ubicast\privacy;
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Privacy Subsystem for block_settings implementing null_provider.
+ * Privacy Subsystem implementing null_provider.
  */
 class provider implements \core_privacy\local\metadata\null_provider {
 
