@@ -92,16 +92,16 @@ class block_ubicast extends block_base {
         }
 
         if (isloggedin() && !empty($this->config->resourceid)) {
-            $src = 'src="'.$CFG->wwwroot.'/blocks/ubicast/lti.php?id='.$COURSE->id.'&oid='.$this->config->resourceid;
+            $src = 'src="' . $CFG->wwwroot . '/blocks/ubicast/lti.php?id=' . $COURSE->id . '&oid=' . $this->config->resourceid;
             if ($this->config->types) {
                 $filters = ['itemType' => $this->config->types];
-                $src .= '&filters='.urlencode(json_encode($filters));
+                $src .= '&filters=' . urlencode(json_encode($filters));
             }
             if ($this->config->orderby) {
-                $src .= '&orderBy='.$this->config->orderby;
+                $src .= '&orderBy=' . $this->config->orderby;
             }
             $src .= '"';
-            $style = 'height="'.$this->config->height.'px" width="100%"';
+            $style = 'height="' . $this->config->height . 'px" width="100%"';
             $allow = 'webkitallowfullscreen mozallowfullscreen allowfullscreen';
             $this->content->text = '<iframe id="contentframe" ' . $style . ' ' . $src . ' ' . $allow . '></iframe>';
         }
