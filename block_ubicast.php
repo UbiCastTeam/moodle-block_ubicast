@@ -49,7 +49,7 @@ class block_ubicast extends block_base {
     }
 
     /**
-     * Locations where block can be displayed.
+     * Locations where the block can be displayed.
      *
      * @return array
      */
