@@ -51,10 +51,11 @@ class block_ubicast_edit_form extends block_edit_form {
             'p' => get_string('block_types_p', 'block_ubicast'),
         ];
         $select = $mform->addElement('select', 'config_types',
-            get_string('block_types_label', 'block_ubicast'), $types);
+            get_string('block_types', 'block_ubicast'), $types);
         $select->setMultiple(true);
         $mform->setType('config_types', PARAM_TEXT);
         $mform->setDefault('config_types', ['c', 'v', 'l', 'p']);
+        $mform->addHelpButton('config_types', 'block_types', 'block_ubicast');
 
         $orders = [
             'type' => get_string('block_orderby_type_asc', 'block_ubicast'),
@@ -72,10 +73,11 @@ class block_ubicast_edit_form extends block_edit_form {
             get_string('block_orderby', 'block_ubicast'), $orders);
         $mform->setType('config_orderby', PARAM_TEXT);
         $mform->setDefault('config_orderby', '-creation_date');
+        $mform->addHelpButton('config_orderby', 'block_orderby', 'block_ubicast');
 
         $mform->addElement('text', 'config_resourceid', get_string('resource_id', 'block_ubicast'),
             ['onchange' => "javascript: this.value = ((new RegExp('(?:^|/)([cvlp][a-z0-9]{19})($:^|/)').exec(this.value)) || [null, this.value])[1]"]);
-        $mform->addHelpButton('config_resourceid', 'resource_id', 'block_ubicast');
         $mform->setType('config_resourceid', PARAM_ALPHANUMEXT);
+        $mform->addHelpButton('config_resourceid', 'resource_id', 'block_ubicast');
     }
 }

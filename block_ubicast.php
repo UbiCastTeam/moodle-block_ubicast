@@ -93,11 +93,11 @@ class block_ubicast extends block_base {
 
         if (isloggedin() && !empty($this->config->resourceid)) {
             $src = 'src="' . $CFG->wwwroot . '/blocks/ubicast/lti.php?id=' . $COURSE->id . '&oid=' . $this->config->resourceid;
-            if ($this->config->types) {
+            if (isset($this->config->types)) {
                 $filters = ['itemType' => $this->config->types];
                 $src .= '&filters=' . urlencode(json_encode($filters));
             }
-            if ($this->config->orderby) {
+            if (isset($this->config->orderby)) {
                 $src .= '&orderBy=' . $this->config->orderby;
             }
             $src .= '"';
