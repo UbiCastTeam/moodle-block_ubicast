@@ -45,16 +45,16 @@ class block_ubicast_edit_form extends block_edit_form {
         $mform->setType('config_height', PARAM_INT);
 
         $types = [
-            'c' => get_string('block_types_c', 'block_ubicast'),
-            'v' => get_string('block_types_v', 'block_ubicast'),
-            'l' => get_string('block_types_l', 'block_ubicast'),
-            'p' => get_string('block_types_p', 'block_ubicast'),
+            'channels' => get_string('block_types_c', 'block_ubicast'),
+            'videos' => get_string('block_types_v', 'block_ubicast'),
+            'lives' => get_string('block_types_l', 'block_ubicast'),
+            'photos' => get_string('block_types_p', 'block_ubicast'),
         ];
         $select = $mform->addElement('select', 'config_types',
             get_string('block_types', 'block_ubicast'), $types);
         $select->setMultiple(true);
         $mform->setType('config_types', PARAM_TEXT);
-        $mform->setDefault('config_types', ['c', 'v', 'l', 'p']);
+        $mform->setDefault('config_types', ['channels', 'videos', 'lives', 'photos']);
         $mform->addHelpButton('config_types', 'block_types', 'block_ubicast');
 
         $orders = [

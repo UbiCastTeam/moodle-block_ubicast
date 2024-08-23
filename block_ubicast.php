@@ -84,7 +84,12 @@ class block_ubicast extends block_base {
         $this->content = new stdClass;
         $this->content->text = '';
         $this->content->footer = '';
-
+        $typesMap = [
+            'lives' => 'l',
+            'videos' => 'v',
+            'channels' => 'c',
+            'photos' => 'p'
+        ];
         if (!isset($this->config)) {
             // The block has yet to be configured, just display configure message in it.
             $this->content->text = get_string('unconfigured_message', 'block_ubicast');
@@ -94,6 +99,10 @@ class block_ubicast extends block_base {
         if (isloggedin() && !empty($this->config->resourceid)) {
             $src = 'src="' . $CFG->wwwroot . '/blocks/ubicast/lti.php?id=' . $COURSE->id . '&oid=' . $this->config->resourceid;
             if (isset($this->config->types)) {
+                $types = array();
+                foreach ($this->config->types as $type) {
+                    $types[] = $typesMap[$type];
+                }
                 $filters = ['itemType' => $this->config->types];
                 $src .= '&filters=' . urlencode(json_encode($filters));
             }
