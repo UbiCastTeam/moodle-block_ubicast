@@ -50,7 +50,7 @@ class block_ubicast_edit_form extends block_edit_form {
             'lives' => get_string('block_types_l', 'block_ubicast'),
             'photos' => get_string('block_types_p', 'block_ubicast'),
         ];
-        $select = $mform->addElement('select', 'config_types',
+        $select =& $mform->addElement('select', 'config_types',
             get_string('block_types', 'block_ubicast'), $types);
         $select->setMultiple(true);
         $mform->setType('config_types', PARAM_TEXT);
