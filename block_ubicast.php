@@ -103,7 +103,7 @@ class block_ubicast extends block_base {
                 foreach ($this->config->types as $type) {
                     $types[] = $typesMap[$type];
                 }
-                $filters = ['itemType' => $this->config->types];
+                $filters = ['itemType' => $types];
                 $src .= '&filters=' . urlencode(json_encode($filters));
             }
             if (isset($this->config->orderby)) {
