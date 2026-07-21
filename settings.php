@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details
+ * Global settings for the ubicast block.
  *
  * @package    block_ubicast
  * @copyright  2019 UbiCast {@link https://www.ubicast.eu}
@@ -24,12 +24,12 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2026072000;
-$plugin->requires = 2019052000;  // Moodle 3.7.
-$plugin->component = 'block_ubicast';
-$plugin->release = '2.2';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->cron = 0;
-$plugin->dependencies = [
-    'mod_ubicast' => 2026071703,
-];
+if ($ADMIN->fulltree) {
+    $settings->add(new admin_setting_configtext(
+        'block_ubicast/default_resourceid',
+        get_string('setting_default_resourceid', 'block_ubicast'),
+        get_string('setting_default_resourceid_desc', 'block_ubicast'),
+        'sync',
+        PARAM_ALPHANUMEXT
+    ));
+}

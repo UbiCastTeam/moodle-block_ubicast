@@ -49,6 +49,15 @@ class block_ubicast extends block_base {
     }
 
     /**
+     * Indicate that the block has global (site-level) configuration.
+     *
+     * @return bool
+     */
+    public function has_config() {
+        return true;
+    }
+
+    /**
      * Locations where the block can be displayed.
      *
      * @return array
@@ -85,14 +94,22 @@ class block_ubicast extends block_base {
         $this->content->text = '';
         $this->content->footer = '';
 
-        if (!isset($this->config)) {
-            // The block has yet to be configured, just display configure message in it.
+        // Resolve the resource ID: use the instance configuration when set, otherwise fall back to
+        // the global default setting (which itself defaults to 'sync').
+        $resourceid = (isset($this->config) && !empty($this->config->resourceid)) ? $this->config->resourceid : '';
+        if (empty($resourceid)) {
+            // Fall back to the global default, which may be empty to restore the unconfigured behaviour.
+            $resourceid = get_config('block_ubicast', 'default_resourceid');
+        }
+
+        if (empty($resourceid)) {
+            // No resource ID configured and no global default set.
             $this->content->text = get_string('unconfigured_message', 'block_ubicast');
             return $this->content;
         }
 
-        if (isloggedin() && !empty($this->config->resourceid)) {
-            $src = 'src="' . $CFG->wwwroot . '/blocks/ubicast/lti.php?id=' . $COURSE->id . '&oid=' . $this->config->resourceid;
+        if (isloggedin()) {
+            $src = 'src="' . $CFG->wwwroot . '/blocks/ubicast/lti.php?id=' . $COURSE->id . '&oid=' . $resourceid;
             if (isset($this->config->types)) {
                 $filters = ['itemType' => $this->config->types];
                 $src .= '&filters=' . urlencode(json_encode($filters));
@@ -101,7 +118,8 @@ class block_ubicast extends block_base {
                 $src .= '&orderBy=' . $this->config->orderby;
             }
             $src .= '"';
-            $style = 'height="' . $this->config->height . 'px" width="100%"';
+            $height = (isset($this->config) && !empty($this->config->height)) ? $this->config->height : 400;
+            $style = 'height="' . $height . 'px" width="100%"';
             $allow = 'webkitallowfullscreen mozallowfullscreen allowfullscreen';
             $this->content->text = '<iframe id="contentframe" ' . $style . ' ' . $src . ' ' . $allow . '></iframe>';
         }
